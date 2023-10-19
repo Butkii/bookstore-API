@@ -34,4 +34,9 @@ exports.bookRouter
     .route("/books")
     .get(bookController.getAllBooks)
     .post(bookController.createBook);
+exports.bookRouter
+    .route("/books/:bookId")
+    .get(bookController.getBookById)
+    .put(bookController.updateBook)
+    .delete(bookController.deleteBook);
 exports.default = exports.bookRouter;

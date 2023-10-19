@@ -13,6 +13,20 @@ export const getAllBooks = (req: Request, res: Response) => {
   }
 }
 
+export const getBookById = (req: Request, res: Response) => {
+  try {
+    const bookId = parseInt(req.params.bookId);
+    const book = books.find(book => book.bookId === bookId);
+    if (book) {
+      res.status(200).json(book);
+    } else {
+      res.status(404).send('Book not found');
+    }
+  } catch (error: any) {
+    res.status(500).send(error.message);
+  }
+}
+
 export const createBook = (req: Request, res: Response) => {
   try {
     const book: Book = req.body;
@@ -22,3 +36,35 @@ export const createBook = (req: Request, res: Response) => {
     res.status(500).send(error.message);
   }
 }
+
+export const updateBook = (req: Request, res: Response) => {
+  try {
+    const bookId = parseInt(req.params.bookId);
+    const updatedBook: Book = req.body;
+    const index = books.findIndex(book => book.bookId === bookId);
+    if (index !== -1) {
+      books[index] = updatedBook;
+      res.status(200).json(updatedBook);
+    } else {
+      res.status(404).send('Book not found');
+    }
+  } catch (error: any) {
+    res.status(500).send(error.message);
+  }
+}
+
+export const deleteBook = (req: Request, res: Response) => {
+  try {
+    const bookId = parseInt(req.params.bookId);
+    const index = books.findIndex(book => book.bookId === bookId);
+    if (index !== -1) {
+      books = books.filter(book => book.bookId !== bookId);
+    } else {
+      res.status(404).send('Book not found');
+    }
+  } catch (error: any) {
+    res.status(500).send(error.message);
+  }
+}
+
+ 

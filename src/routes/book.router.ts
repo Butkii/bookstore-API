@@ -9,5 +9,11 @@ bookRouter
     .get(bookController.getAllBooks)
     .post(bookController.createBook);
 
+bookRouter
+    .route("/books/:bookId")
+    .get(bookController.getBookById)
+    .put(bookController.updateBook)
+    .delete(bookController.deleteBook);
+
 export default bookRouter;
     
