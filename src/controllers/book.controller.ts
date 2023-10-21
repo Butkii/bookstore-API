@@ -5,6 +5,12 @@ let books: Book[] = [
   {bookId: 1, title: 'Deception Point', author: 'Dan Brown'},
 ];
 
+/*
+ * Gets all books
+ * Response code:
+   - 200 - OK
+   - 500 - Error
+*/
 export const getAllBooks = (req: Request, res: Response) => {
   try {
     res.status(200).json(books);
@@ -13,6 +19,13 @@ export const getAllBooks = (req: Request, res: Response) => {
   }
 }
 
+/*
+ * Gets book by id
+ * Response code:
+   - 200 - OK
+   - 404 - Not Found
+   - 500 - Error
+*/
 export const getBookById = (req: Request, res: Response) => {
   try {
     const bookId = parseInt(req.params.bookId);
@@ -27,6 +40,13 @@ export const getBookById = (req: Request, res: Response) => {
   }
 }
 
+/*
+ * Creates new book
+ * Response code:
+   - 200 - OK
+   - 400 - Invalid data
+   - 500 - Error
+*/
 export const createBook = (req: Request, res: Response) => {
   try {
     const book: Book = req.body;
@@ -44,6 +64,13 @@ export const createBook = (req: Request, res: Response) => {
   }
 }
 
+/*
+ * Updates book by id
+ * Response code:
+   - 200 - OK
+   - 404 - Not Found
+   - 500 - Error
+*/
 export const updateBook = (req: Request, res: Response) => {
   try {
     const bookId = parseInt(req.params.bookId);
@@ -63,6 +90,13 @@ export const updateBook = (req: Request, res: Response) => {
   }
 }
 
+/*
+ * Deletes book by id
+ * Response code:
+   - 200 - OK
+   - 404 - Not Found
+   - 500 - Error
+*/
 export const deleteBook = (req: Request, res: Response) => {
   try {
     const bookId = parseInt(req.params.bookId);

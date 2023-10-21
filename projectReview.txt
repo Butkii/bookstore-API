@@ -1,0 +1,17 @@
+Project Review: Back-End Intern Interview Project
+
+I, Bhakti Ghaghda, completed the interview project as part of the back-end intern assessment. The project involved developing a RESTful API for a simple online bookstore (Task 1) and testing this API (Task 2). Here's my review of the project:
+
+Task 1 (API Development):
+- I chose to implement the API development using Node.js with TypeScript, a combination I am familiar with. This made the implementation process straightforward and provided type safety for the project.
+- Implementing the API was relatively easy due to my experience with Node.js and TypeScript. The code structure adheres to RESTful design principles, defining clear endpoints for CRUD operations.
+- I included informative comments that describe the purpose and functionality of each API route to enhance readability.
+
+Task 2 (API Testing):
+- I opted to use Jest for testing the API. Although I had not used Jest previously, I saw this as an opportunity to explore a new testing framework.
+- I created comprehensive test cases that covered a wide range of scenarios for the bookstore CRUD, including both positive and negative cases.
+- The tests are organized within "describe" and "it" blocks, ensuring clear and logical structuring.
+- The testing results help identify the correctness of the API's functionality and its compliance with specified response codes.
+
+Additional Information:
+- I initially attempted to implement Swagger for API documentation. However, I found the implementation process to be more complex than necessary for a relatively simple API. To maintain simplicity and avoid overcomplicating the task, I chose to provide documentation using basic comments and an HTML page.
